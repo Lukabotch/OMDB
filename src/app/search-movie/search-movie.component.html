@@ -1,0 +1,31 @@
+<div class="mainDiv">
+  <div class="inputField">
+    <input
+      type="text"
+      class="movieInput"
+      placeholder="type your movie..."
+      #input
+    />
+    <button class="searchButton btn-danger" (click)="getMyMovie()">
+      Search
+    </button>
+  </div>
+  <ng-container *ngIf="movie$ | async as movie">
+    <div class="movieField">
+      <div class="movieTittle">Title: {{ movie.Title }}</div>
+      <div class="yearsAgo">{{ movie.Released | years }}</div>
+      <div class="actingField">Actors: {{ movie.Actors | firstname }}</div>
+      <div class="currencyAndFlag">
+        <span>Country:</span>
+        <div *ngFor="let country of movie.Country.split(', ')">
+          {{ country | myCurrency | async }}
+          <img [src]="country | flags | async" width="20" />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+<ng-container>
+  <button class="btn-danger add-list" routerLink="form" *ngIf="movie$ | async as movie" (click)="postMyList(movie)">Add To List</button>
+  </ng-container>
+<router-outlet></router-outlet>

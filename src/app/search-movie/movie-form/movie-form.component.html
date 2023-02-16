@@ -1,0 +1,34 @@
+  <div class="title" *ngIf="movie">{{ movie.Title }}</div>
+  <div class="review">
+    <div class="reviewHead">
+      <span>Write Review:</span>
+    </div>
+    <textarea name="" id="" cols="30" rows="10" #input> </textarea>
+    <div class="ratingDiv">
+      <div class="myRate">
+        <span>Your Rating:</span
+        ><select name="" id="" [(ngModel)]="selectedIndex">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button
+    class="addList btn-danger"
+    (click)="addToList()"
+    [disabled]="disable"
+    [ngClass]="disable ? 'disabled' : ''"
+  >
+    Add to mylist
+  </button>
+
+  <div *ngIf="added" class="myToastr">Added To My List</div>

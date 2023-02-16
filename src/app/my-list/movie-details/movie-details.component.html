@@ -1,0 +1,63 @@
+<div class="movieDetails" *ngIf="movieDetails$ | async as movie">
+  <div>
+    <div
+      class="mainDiv"
+      [ngStyle]="{ 'background-image': 'url(' + movie.movie.Poster + ')' }"
+    ></div>
+  </div>
+  <div class="userExperience">
+    <span
+      ><b>My Review:</b>
+      <p>{{ movie.review }}</p></span
+    >
+    <span
+      ><b>User Rating:</b>
+      <p>{{ movie.rate + " " + "out of 10" }}</p>
+    </span>
+  </div>
+  <div class="movieField">
+    <div class="movieTittle"><b>Title: </b>{{ movie.movie.Title }}</div>
+    <div class="genre"><b>Genre: </b>{{ movie.movie.Genre }}</div>
+    <div class="directedBy"><b>Directed By: </b>{{ movie.movie.Director }}</div>
+    <div class="directedBy"><b>Written By: </b>{{ movie.movie.Writer }}</div>
+
+    <div class="yearsAgo">{{ movie.movie.Released | years }}</div>
+    <div class="runtime"><b>Runtime: </b>{{ movie.movie.Runtime }}</div>
+    <div class="actingField">
+      <b>Actors: </b>{{ movie.movie.Actors | firstname }}
+    </div>
+    <div class="imdbRate"><b>IMDb: </b>{{ movie.movie.imdbRating }}</div>
+    <div class="currencyAndFlag">
+      <span><b>Country:</b></span>
+      <div *ngFor="let country of movie.movie.Country.split(', ')">
+        {{ country | myCurrency | async }}
+        <img [src]="country | flags | async" width="20" />
+      </div>
+    </div>
+    <div><b>Plot:</b></div>
+    <div class="plot" *ngIf="isEditMode == false">{{ movie.movie.Plot }}</div>
+    <textarea
+      class="editMode"
+      *ngIf="isEditMode"
+      [value]="movie.movie.Plot"
+      #input
+    ></textarea>
+  </div>
+  <button
+    (click)="deleteMovie(movie.id)"
+    class="btn-danger delete"
+    *ngIf="isEditMode == false"
+  >
+    Delete Movie
+  </button>
+  <button
+    (click)="editPlot(movie.id)"
+    class="btn-secondary delete"
+    *ngIf="isEditMode == false"
+  >
+    Edit Plot
+  </button>
+  <button class="btn-success delete" *ngIf="isEditMode" (click)="confirmEdit(movie.id,movie)">Confirm Edit</button>
+  <button class="btn-dark delete" *ngIf="isEditMode" (click)="cancelEdit()">Cancel Edit</button>
+</div>
+<div class="deletion" *ngIf="deleted">Movie Has Been Deleted</div>

@@ -1,0 +1,14 @@
+.navbarMain {
+  background-color: black;
+  color: #ffffff;
+  li {
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  a {
+    color: #dc3545;
+  }
+}

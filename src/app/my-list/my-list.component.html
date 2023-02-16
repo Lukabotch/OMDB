@@ -1,0 +1,17 @@
+<div class="movieList">
+  <div *ngFor="let movs of movie$ | async as movie">
+    <div
+      class="mainDiv"
+      [ngStyle]="{ 'background-image': 'url(' + movs.movie.Poster + ')' }"
+    >
+    <button class="seeMore" (click)="seeDetails(movs)" [routerLink]="movs.id">SEE MORE</button>
+      <div class="movieField">
+        <div class="movieTittle">Title: {{ movs.movie.Title }}</div>
+        <div class="yearsAgo">{{ movs.movie.Released | years }}</div>
+        <div class="actingField">
+          Actors: {{ movs.movie.Actors | firstname }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

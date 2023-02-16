@@ -1,0 +1,54 @@
+.mainDiv {
+  /* background: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 350px;
+  margin: 50px auto;
+  border-radius: 3px;
+  background-color: black;
+  min-height: 500px;
+  transition: 0.3s;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.inputField {
+  display: flex;
+  justify-content: center;
+  font-family: Rubik;
+  padding: 10px;
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    font-family: Rubik;
+    margin: 5px;
+  }
+  input {
+    margin: 5px;
+    font-family: Rubik;
+    height: 30px;
+  }
+}
+
+.movieField {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  padding: 10px;
+  width: 350px;
+  border-radius: 8px;
+  font-family: Rubik;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.648);
+}
+.add-list{
+font-family: Rubik;
+display: flex;
+margin: auto;
+padding: 5px 20px;
+}

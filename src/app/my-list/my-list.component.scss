@@ -1,0 +1,76 @@
+.mainDiv {
+  /* background: black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+  width: 300px;
+  margin: 50px auto;
+  border-radius: 3px;
+  background-color: black;
+  min-height: 500px;
+  transition: 0.3s;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.inputField {
+  display: flex;
+  justify-content: center;
+  font-family: Rubik;
+  padding: 10px;
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+    font-family: Rubik;
+    margin: 5px;
+  }
+  input {
+    margin: 5px;
+    font-family: Rubik;
+    height: 30px;
+  }
+}
+
+.movieField {
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 10px;
+  width: 350px;
+  border-radius: 8px;
+  font-family: Rubik;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.648);
+}
+.add-list {
+  font-family: Rubik;
+  display: flex;
+  margin: auto;
+  padding: 5px 20px;
+}
+.movieList{
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  flex-direction: row;
+  margin:30px auto;
+  gap: 20px;
+}
+.seeMore{
+background: rgba(0, 0, 0, 0.71);
+color: #FFFFFF;
+font-family: Rubik;
+padding: 5px 15px;
+font-size: 15px;
+font-weight: 500;
+transition: 0.3s;
+&:hover{
+  background: black;
+}
+
+}

@@ -1,0 +1,25 @@
+<div class="population">
+  <input
+    class="movieInput"
+    type="text"
+    placeholder="type first"
+    [(ngModel)]="input1"
+  />
+  <input
+    class="movieInput"
+    type="text"
+    placeholder="type second"
+    [(ngModel)]="input2"
+  />
+  <input
+    class="movieInput"
+    type="text"
+    placeholder="type third"
+    [(ngModel)]="input3"
+  />
+  <button class="btn-danger" (click)="getDuration()">SEE RESULT</button>
+</div>
+<div class="lastResults">
+  <div class="getRuntime" *ngIf="duration$">{{duration$ | async}}</div>
+  <div class="getPopulation" *ngIf="population$">{{population$ |async}}</div>
+</div>

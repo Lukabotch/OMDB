@@ -1,0 +1,49 @@
+.movieInput {
+  margin: 5px;
+  font-family: Rubik;
+  font-size: 13px;
+  padding: 10px 20px;
+}
+button {
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: none;
+  font-size: 13px;
+  font-family: Rubik;
+  margin: 5px;
+}
+.population {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  justify-content: center;
+  margin-top: -1px;
+}
+.mainDiv2 {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px auto 0px auto;
+  background-color: black;
+  transition: 0.3s;
+  height: auto;
+  background-repeat: no-repeat;
+}
+.lastResults {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  margin: -1px auto;
+  background-color: black;
+  transition: 0.3s;
+  height: auto;
+  background-repeat: no-repeat;
+}
+.getPopulation {
+  color: white;
+  font-family: Rubik;
+}
+.getRuntime {
+  color: white;
+  font-family: Rubik;
+}
